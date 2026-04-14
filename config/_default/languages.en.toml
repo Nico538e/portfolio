@@ -9,7 +9,7 @@ displayName = "EN"
 isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
-description = "Det her burde være mit portfolio"
+description = "Welcome to my portfolio"
 
   [params.author]
   links = [ ]
