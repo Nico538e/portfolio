@@ -1,11 +1,9 @@
 ---
 title: "Forside"
-layout: "profile"
 ---
 
-
- Datamatiker studerende  
- Interesseret i webudvikling & software
+Datamatiker studerende  
+Interesseret i webudvikling & software
 
 ---
 
@@ -15,12 +13,10 @@ Se nogle af mine projekter her:
 - [Projekt 1](/projects/project1/)
 - [Flere projekter på vej...]
 
+  [Se alle projekter](/projects/)
+
 ---
 
-## Om mig
-Jeg er studerende og arbejder med:
-- Webudvikling
-- Programmering
-- Systemudvikling
-
- [Læs mere om mig](/about/)
+## Posts
+  
+  [Læs mine posts her](/posts/)

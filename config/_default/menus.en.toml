@@ -6,26 +6,32 @@ name = "github"
 pre = "github"
 url = "https://github.com/Nico538e"
 identifier = "0IsnDdpvUK"
-weight = 9_999
+weight = 4
 
 [[main]]
 name = "linkedin"
 pre = "linkedin"
 url = "https://www.linkedin.com/in/nicolai-strand/"
 identifier = "SnHjIkwixa"
-weight = 9_999
+weight = 5
 
 [[main]]
 name = "About"
 pageRef = "About"
 identifier = "vuhkBw1ayA"
-weight = 9_999
+weight = 1
 
 [[main]]
 name = "Posts"
 pageRef = "Posts"
 identifier = "VJKHN2RFF9"
-weight = 9_999
+weight = 2
+
+[[main]]
+name = "Projects"
+pageRef = "Projects"
+identifier = "nbZ535tcqj"
+weight = 3
 
 [[footer]]
 none = "none"
