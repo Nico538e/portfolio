@@ -2,12 +2,6 @@
 none = "none"
 
 [[main]]
-name = "Posts"
-pageRef = "Posts"
-identifier = "NFbLjhhDr2"
-weight = 9_999
-
-[[main]]
 name = "github"
 pre = "github"
 url = "https://github.com/Nico538e"
@@ -19,6 +13,18 @@ name = "linkedin"
 pre = "linkedin"
 url = "https://www.linkedin.com/in/nicolai-strand/"
 identifier = "SnHjIkwixa"
+weight = 9_999
+
+[[main]]
+name = "About"
+pageRef = "About"
+identifier = "vuhkBw1ayA"
+weight = 9_999
+
+[[main]]
+name = "Posts"
+pageRef = "Posts"
+identifier = "VJKHN2RFF9"
 weight = 9_999
 
 [[footer]]

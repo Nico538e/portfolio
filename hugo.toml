@@ -1,3 +1,6 @@
 baseURL = 'https://example.org/'
 locale = 'en-us'
 title = 'My portfolio'
+[params.homepage]
+  layout = "profile"
+  showRecent = true

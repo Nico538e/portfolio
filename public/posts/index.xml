@@ -2,14 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Portfolio</title>
-    <link>https://example.org/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</managingEditor>
     <webMaster>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</webMaster>
     <copyright>© 2026 Nicolai Jahncke Strand</copyright>
-    <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mit første projekt: Portfolio i Hugo</title>
+      <link>http://localhost:1313/posts/post1/</link>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
+      <guid>http://localhost:1313/posts/post1/</guid>
+      <description>Jeg har bygget mit eget portfolio site med Hugo og lært en masse undervejs.</description>
+      
+    </item>
     
   </channel>
 </rss>
