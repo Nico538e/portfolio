@@ -16,7 +16,7 @@ Jeg er datamatikerstuderende med interesse for softwareudvikling.
 - Git
 
 ##  Mål
-At blive en dygtig udvikler og arbejde med moderne teknologier.
+At udvikle mig fagligt så meget som muligt og have det sjovt samtidig.
 
 ##  Kontakt
 - Email: nicolai-strand@hotmail.com
