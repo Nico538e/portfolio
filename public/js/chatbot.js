@@ -1,7 +1,7 @@
 // Send message to Vercel API (som proxy til Dify)
 async function sendToDify(message) {
   try {
-    const response = await fetch('https://portfolio-nico538es-projects.vercel.app/api/chat', {
+    const response = await fetch('https://portfolio-jet-rho-19.vercel.app/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
