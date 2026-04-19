@@ -1,21 +1,6 @@
 <!-- Chatbot Styles -->
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/chatbot.css">
 
-<!-- Generate Content Index -->
-{{- $contentIndex := slice -}}
-{{- range .Site.Pages -}}
-  {{- if and (ne .Kind "taxonomy") (ne .Kind "taxonomyTerm") (ne .Kind "section") (ne .Kind "home") -}}
-    {{- $page := dict 
-        "title" .Title 
-        "url" .Permalink 
-        "content" (.Plain | truncate 500)
-        "summary" .Summary
-        "section" .Section
-    -}}
-    {{- $contentIndex = $contentIndex | append $page -}}
-  {{- end -}}
-{{- end -}}
-
 <!-- Chatbot Widget -->
 <div id="chatbot-widget">
   <!-- Floating Button -->
@@ -74,17 +59,6 @@
     </div>
   </div>
 </div>
-
-<!-- Content Index Data (embedded) -->
-<script type="application/json" id="chatbot-content-index">
-[{{ range $i, $item := $contentIndex }}{{ if gt $i 0 }},{{ end }}{
-  "title": {{ $item.title | jsonify }},
-  "url": {{ $item.url | jsonify }},
-  "content": {{ $item.content | jsonify }},
-  "summary": {{ $item.summary | jsonify }},
-  "section": {{ $item.section | jsonify }}
-}{{ end }}]
-</script>
 
 <!-- Chatbot Script -->
 <script src="{{ .Site.BaseURL }}js/chatbot.js"></script>

@@ -28,7 +28,15 @@
   }
 }
 
-/* Chatbot widget styles */
+@keyframes typing {
+  0%, 60%, 100% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
 #chatbot-widget {
   position: fixed;
   bottom: 1rem;
@@ -205,6 +213,10 @@
 .chatbot-send-icon {
   width: 20px;
   height: 20px;
+}
+
+.typing-dots {
+  animation: typing 1.4s infinite;
 }
 
 /* Scrollbar styling */

@@ -1,124 +1,24 @@
-// Simple string similarity function (Levenshtein distance)
-function levenshteinDistance(str1, str2) {
-  const track = Array(str2.length + 1)
-    .fill(null)
-    .map(() => Array(str1.length + 1).fill(0));
+// Send message to Vercel API (som proxy til Dify)
+async function sendToDify(message) {
+  try {
+    const response = await fetch('https://portfolio-nico538es-projects.vercel.app/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message })
+    });
 
-  for (let i = 0; i <= str1.length; i += 1) {
-    track[0][i] = i;
-  }
-  for (let j = 0; j <= str2.length; j += 1) {
-    track[j][0] = j;
-  }
-
-  for (let j = 1; j <= str2.length; j += 1) {
-    for (let i = 1; i <= str1.length; i += 1) {
-      const indicator = str1[i - 1] === str2[j - 1] ? 0 : 1;
-      track[j][i] = Math.min(
-        track[j][i - 1] + 1,
-        track[j - 1][i] + 1,
-        track[j - 1][i - 1] + indicator
-      );
-    }
-  }
-
-  return track[str2.length][str1.length];
-}
-
-// Calculate similarity score (0-1)
-function calculateSimilarity(str1, str2) {
-  const distance = levenshteinDistance(str1.toLowerCase(), str2.toLowerCase());
-  const maxLength = Math.max(str1.length, str2.length);
-  return 1 - distance / maxLength;
-}
-
-// Simple keyword matching
-function findRelevantContent(query, contentIndex) {
-  const queryTerms = query.toLowerCase().split(/\s+/);
-  const results = [];
-
-  for (const doc of contentIndex) {
-    let score = 0;
-    let matches = 0;
-
-    // Check title
-    if (doc.title) {
-      queryTerms.forEach((term) => {
-        if (doc.title.toLowerCase().includes(term)) {
-          score += 5;
-          matches++;
-        }
-      });
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
     }
 
-    // Check content
-    if (doc.content) {
-      queryTerms.forEach((term) => {
-        const count = (doc.content.toLowerCase().match(new RegExp(term, "g")) || []).length;
-        score += count;
-        if (count > 0) matches++;
-      });
-    }
-
-    // Check summary
-    if (doc.summary) {
-      queryTerms.forEach((term) => {
-        if (doc.summary.toLowerCase().includes(term)) {
-          score += 3;
-          matches++;
-        }
-      });
-    }
-
-    // Check section
-    if (doc.section) {
-      queryTerms.forEach((term) => {
-        if (doc.section.toLowerCase().includes(term)) {
-          score += 2;
-        }
-      });
-    }
-
-    if (score > 0) {
-      results.push({ ...doc, score, matches });
-    }
+    const data = await response.json();
+    return data.answer || 'Jeg kunne ikke få et svar. Prøv igen senere.';
+  } catch (error) {
+    console.error('Chatbot API error:', error);
+    return 'Der skete en fejl ved forbindelsen til AI\'en. Prøv igen senere.';
   }
-
-  // Sort by score
-  results.sort((a, b) => b.score - a.score);
-  return results.slice(0, 3); // Return top 3 results
-}
-
-// Generate answer from search results
-function generateAnswer(query, searchResults) {
-  if (searchResults.length === 0) {
-    return "I couldn't find relevant information about that on this site. Try asking about projects, posts, skills, or background.";
-  }
-
-  const topResult = searchResults[0];
-  let answer = "";
-
-  // Build contextual answer
-  if (topResult.title) {
-    answer += `Based on "${topResult.title}": `;
-  }
-
-  if (topResult.summary) {
-    answer += topResult.summary;
-  } else if (topResult.content) {
-    const excerpt = topResult.content.substring(0, 200).trim();
-    answer += excerpt + (topResult.content.length > 200 ? "..." : "");
-  }
-
-  if (searchResults.length > 1) {
-    answer += "\n\nOther relevant pages: ";
-    answer += searchResults
-      .slice(1)
-      .map((r) => r.title)
-      .join(", ");
-  }
-
-  return answer;
 }
 
 // Chatbot initialization
@@ -128,21 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const messagesContainer = document.getElementById("chatbot-messages");
   const inputField = document.getElementById("chatbot-input");
   const sendBtn = document.getElementById("chatbot-send");
-
-  // Store for site content
-  let contentIndex = [];
-
-  // Load content index from embedded JSON
-  function loadContentIndex() {
-    try {
-      const indexScript = document.getElementById("chatbot-content-index");
-      if (indexScript && indexScript.textContent) {
-        contentIndex = JSON.parse(indexScript.textContent);
-      }
-    } catch (error) {
-      console.error("Failed to parse content index:", error);
-    }
-  }
 
   // Toggle window
   toggleBtn.addEventListener("click", function () {
@@ -165,20 +50,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Clear input
     inputField.value = "";
+    inputField.disabled = true;
 
-    // Search and generate response
-    const searchResults = findRelevantContent(message, contentIndex);
-    const answer = generateAnswer(message, searchResults);
+    // Show loading indicator
+    const loadingDiv = document.createElement("div");
+    loadingDiv.className = "chatbot-message-bot";
+    loadingDiv.id = "loading-indicator";
+    loadingDiv.innerHTML = `<div class="chatbot-bubble-bot"><span class="typing-dots">Tænker</span></div>`;
+    messagesContainer.appendChild(loadingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-    // Add bot response with small delay
-    setTimeout(() => {
+    // Send to Dify API
+    sendToDify(message).then(answer => {
+      // Remove loading indicator
+      const loadingEl = document.getElementById("loading-indicator");
+      if (loadingEl) loadingEl.remove();
+
+      // Add bot response
       const botDiv = document.createElement("div");
       botDiv.className = "chatbot-message-bot";
       const answerText = formatAnswer(answer);
       botDiv.innerHTML = `<div class="chatbot-bubble-bot">${answerText}</div>`;
       messagesContainer.appendChild(botDiv);
       messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }, 300);
+
+      // Re-enable input
+      inputField.disabled = false;
+      inputField.focus();
+    }).catch(error => {
+      console.error('Error:', error);
+      // Remove loading indicator
+      const loadingEl = document.getElementById("loading-indicator");
+      if (loadingEl) loadingEl.remove();
+
+      // Add error message
+      const errorDiv = document.createElement("div");
+      errorDiv.className = "chatbot-message-bot";
+      errorDiv.innerHTML = `<div class="chatbot-bubble-bot">Der skete en fejl. Prøv igen.</div>`;
+      messagesContainer.appendChild(errorDiv);
+
+      // Re-enable input
+      inputField.disabled = false;
+      inputField.focus();
+    });
 
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
@@ -199,9 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
       chatWindow.classList.add("hidden");
     }
   });
-
-  // Load content on page load
-  loadContentIndex();
 });
 
 // Utility: Escape HTML to prevent XSS
