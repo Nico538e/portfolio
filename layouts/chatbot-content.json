@@ -1,0 +1,20 @@
+{{- $contentIndex := slice -}}
+{{- range .Site.AllPages -}}
+  {{- if and (ne .Kind "taxonomy") (ne .Kind "taxonomyTerm") (ne .Kind "section") (ne .Kind "home") -}}
+    {{- $page := dict 
+        "title" .Title 
+        "url" .Permalink 
+        "content" (.Plain | truncate 500)
+        "summary" .Summary
+        "section" .Section
+    -}}
+    {{- $contentIndex = $contentIndex | append $page -}}
+  {{- end -}}
+{{- end -}}
+[{{ range $i, $item := $contentIndex }}{{ if gt $i 0 }},{{ end }}{
+  "title": {{ $item.title | jsonify }},
+  "url": {{ $item.url | jsonify }},
+  "content": {{ $item.content | jsonify }},
+  "summary": {{ $item.summary | jsonify }},
+  "section": {{ $item.section | jsonify }}
+}{{ end }}]

@@ -805,6 +805,123 @@
 </div>
 
     </div>
-  </body>
+    
+<link rel="stylesheet" href="https://example.org/css/chatbot.css">
+
+
+<div id="chatbot-widget">
+  
+  <button
+    id="chatbot-toggle"
+    class="chatbot-toggle"
+    aria-label="Open chatbot"
+  >
+    <svg class="chatbot-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+    </svg>
+  </button>
+
+  
+  <div
+    id="chatbot-window"
+    class="chatbot-window hidden"
+  >
+    
+    <div class="chatbot-header">
+      <h3 class="chatbot-title">Site Assistant</h3>
+      <p class="chatbot-subtitle">Ask me anything about this site</p>
+    </div>
+
+    
+    <div
+      id="chatbot-messages"
+      class="chatbot-messages"
+    >
+      <div class="chatbot-message-bot">
+        <div class="chatbot-bubble-bot">
+          Hi! I'm here to help. Ask me about the site content.
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="chatbot-input-area">
+      <div class="chatbot-input-container">
+        <input
+          id="chatbot-input"
+          type="text"
+          placeholder="Ask a question..."
+          class="chatbot-input"
+        />
+        <button
+          id="chatbot-send"
+          class="chatbot-send"
+          aria-label="Send message"
+        >
+          <svg class="chatbot-send-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="application/json" id="chatbot-content-index">
+[{
+  "title": "\"Hugo\"",
+  "url": "\"https://example.org/tags/hugo/\"",
+  "content": "\"\"",
+  "summary": "\"\"",
+  "section": "\"tags\""
+},{
+  "title": "\"Mit første projekt: Portfolio i Hugo\"",
+  "url": "\"https://example.org/posts/post1/\"",
+  "content": "\" Mit første projekt: Portfolio i Hugo # I dette projekt har jeg bygget mit eget portfolio site med Hugo.\\nFormål # Formålet var at lære:\\nHvordan man arbejder med static site generators Struktur i projekter Deployment Teknologier # Hugo HTML / CSS Git \\u0026amp;amp; GitHub Hvad jeg lærte # Hvordan Hugo bruger content og templates Hvordan man organiserer et projekt Hvordan man deployer et site Udfordringer # Jeg havde især problemer med:\\nAt forstå Hugo’s struktur Styling og layout Jeg løste det ved at:\\nLæse …\"",
+  "summary": "\"Jeg har bygget mit eget portfolio site med Hugo og lært en masse undervejs.\"",
+  "section": "\"posts\""
+},{
+  "title": "\"Om mig\"",
+  "url": "\"https://example.org/about/\"",
+  "content": "\" Om mig # Jeg er datamatikerstuderende med interesse for softwareudvikling.\\nTeknologier # Java HTML / CSS JavaScript C# SQL Git Mål # At udvikle mig fagligt så meget som muligt og have det sjovt samtidig.\\nKontakt # Email: nicolai-strand@hotmail.com \"",
+  "summary": "\"\"",
+  "section": "\"\""
+},{
+  "title": "\"Portfolio Website\"",
+  "url": "\"https://example.org/projects/project1/\"",
+  "content": "\" Portfolio Website # Dette er mit eget portfolio site bygget med Hugo.\\nTeknologier # Hugo HTML / CSS Beskrivelse # Jeg har bygget dette site for at vise mine projekter.\\n\"",
+  "summary": "\"Mit portfolio site lavet i Hugo\"",
+  "section": "\"projects\""
+},{
+  "title": "\"Projekt\"",
+  "url": "\"https://example.org/categories/projekt/\"",
+  "content": "\"\"",
+  "summary": "\"\"",
+  "section": "\"categories\""
+},{
+  "title": "\"Studie\"",
+  "url": "\"https://example.org/categories/studie/\"",
+  "content": "\"\"",
+  "summary": "\"\"",
+  "section": "\"categories\""
+},{
+  "title": "\"Web\"",
+  "url": "\"https://example.org/tags/web/\"",
+  "content": "\"\"",
+  "summary": "\"\"",
+  "section": "\"tags\""
+},{
+  "title": "\"Webudvikling\"",
+  "url": "\"https://example.org/tags/webudvikling/\"",
+  "content": "\"\"",
+  "summary": "\"\"",
+  "section": "\"tags\""
+}]
+</script>
+
+
+<script src="https://example.org/js/chatbot.js"></script>
+</body>
   
 </html>
