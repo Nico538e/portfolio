@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Home</title>
-    <link>http://localhost:62752/posts/</link>
+    <link>https://example.org/posts/</link>
     <description>Recent content in Posts on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</managingEditor>
     <webMaster>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</webMaster>
     <copyright>© 2026 Nicolai Jahncke Strand</copyright>
-    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:62752/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hvordan jeg lavede en RAG-chatbot til mit portfolio</title>
-      <link>http://localhost:62752/posts/rag-chatbot/</link>
+      <link>https://example.org/posts/rag-chatbot/</link>
       <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>http://localhost:62752/posts/rag-chatbot/</guid>
+      <guid>https://example.org/posts/rag-chatbot/</guid>
       <description>En kortfattet guide til at bygge en Retrieval-Augmented Generation chatbot med Dify, Netlify Functions og vanilla JavaScript.</description>
       
     </item>
     
     <item>
       <title>Mit første projekt: Portfolio i Hugo</title>
-      <link>http://localhost:62752/posts/post1/</link>
+      <link>https://example.org/posts/post1/</link>
       <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>http://localhost:62752/posts/post1/</guid>
+      <guid>https://example.org/posts/post1/</guid>
       <description>Jeg har bygget mit eget portfolio site med Hugo og lært en masse undervejs.</description>
       
     </item>

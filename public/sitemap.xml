@@ -3,43 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:62752/</loc>
+    <loc>https://example.org/</loc>
     <lastmod>2026-04-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/posts/rag-chatbot/</loc>
+    <loc>https://example.org/posts/rag-chatbot/</loc>
     <lastmod>2026-04-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/posts/</loc>
+    <loc>https://example.org/posts/</loc>
     <lastmod>2026-04-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/posts/post1/</loc>
+    <loc>https://example.org/posts/post1/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/about/</loc>
+    <loc>https://example.org/about/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/projects/project1/</loc>
+    <loc>https://example.org/projects/project1/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:62752/projects/</loc>
+    <loc>https://example.org/projects/</loc>
     <lastmod>2026-04-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

@@ -17,9 +17,9 @@ Jeg har lige implementeret en lille RAG-chatbot på mit portfolio. Her er hvorda
 
 Jeg brugte tre dele:
 
-1. **Frontend**: Vanilla JavaScript + CSS (floating widget i hjørne)
-2. **Backend**: Netlify Functions (sikrer API-nøgler)
-3. **AI**: Dify (håndterer RAG + svar-generering)
+1. **Frontend**: Vanilla JavaScript + CSS (floating widget i hjørne) på GitHub Pages
+2. **Backend**: Vercel API (sikrer API-nøgler)
+3. **AI**: Dify Knowledge Base (håndterer RAG + svar-generering)
 
 ##How-to
 
@@ -30,13 +30,23 @@ I Dify dashboard:
 - Aktivér **Web Crawler** og peg på dit portfolio
 - Dify indekserer automatisk alle dine posts/projekter
 
-### 2. Netlify Function for API
+### 2. Vercel API for proxy
 
-Opret `netlify/functions/chat.js`:
+Opret `api/chat.js` på Vercel:
 
 ```javascript
-exports.handler = async (event) => {
-  const { message } = JSON.parse(event.body);
+module.exports = async (req, res) => {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  const { message } = req.body;
   const apiKey = process.env.DIFY_API_KEY;
   
   const response = await fetch('https://api.dify.ai/v1/chat-messages', {
@@ -54,10 +64,7 @@ exports.handler = async (event) => {
   });
   
   const data = await response.json();
-  return {
-    statusCode: 200,
-    body: JSON.stringify({ answer: data.answer })
-  };
+  return res.status(200).json({ answer: data.answer });
 };
 ```
 
@@ -67,8 +74,11 @@ I `static/js/chatbot.js`:
 
 ```javascript
 async function sendToDify(message) {
-  const response = await fetch('/.netlify/functions/chat', {
+  const response = await fetch('https://portfolio-jet-rho-19.vercel.app/api/chat', {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({ message })
   });
   const data = await response.json();
@@ -76,21 +86,21 @@ async function sendToDify(message) {
 }
 ```
 
-### 4. Miljøvariabler
+(Erstat Vercel URL med din egen)
 
-**Lokalt** (`.env.local`):
-```
-DIFY_API_KEY=app-din-api-nøgle-her
-DIFY_API_URL=https://api.dify.ai/v1
-```
+### 4. Miljøvariabler på Vercel
 
-**På Netlify**: Sæt samme variabler i dashboard → Site settings → Build & deploy → Environment
+1. Gå til Vercel dashboard → dit projekt → Settings → Environment Variables
+2. Tilføj:
+   - **Name:** `DIFY_API_KEY`
+   - **Value:** din Dify API key
+3. Redeploy
 
 ## Vigtigste lessons
 
-- **Sikkerhed først**: Hold API-nøgler på backend, aldrig i browser
+- **Sikkerhed først**: Hold API-nøgler på backend (Vercel), aldrig i browser
 - **RAG er powerful**: Brugeren får svar baseret på *dit* indhold
-- **Netlify Functions**: Super simpelt for serverless backend
-- **Dify er let**: Kræver næsten ingen konfiguration
+- **Vercel API**: Super simpelt for serverless backend
+- **Dify Knowledge Base**: Auto-indeksering af dit site
 
 Det er det! En simpel, sikker, AI-drevet chatbot på få timers arbejde.
