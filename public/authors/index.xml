@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Home</title>
-    <link>https://example.org/authors/</link>
+    <link>http://localhost:1313/authors/</link>
     <description>Recent content in Authors on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</managingEditor>
     <webMaster>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</webMaster>
     <copyright>© 2026 Nicolai Jahncke Strand</copyright>
-    <atom:link href="https://example.org/authors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

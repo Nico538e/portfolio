@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Home</title>
-    <link>https://example.org/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</managingEditor>
     <webMaster>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</webMaster>
     <copyright>© 2026 Nicolai Jahncke Strand</copyright>
-    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Udvikling</title>
-      <link>https://example.org/categories/udvikling/</link>
+      <link>http://localhost:1313/categories/udvikling/</link>
       <pubDate>Fri, 24 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>https://example.org/categories/udvikling/</guid>
+      <guid>http://localhost:1313/categories/udvikling/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Projekt</title>
-      <link>https://example.org/categories/projekt/</link>
+      <link>http://localhost:1313/categories/projekt/</link>
       <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>https://example.org/categories/projekt/</guid>
+      <guid>http://localhost:1313/categories/projekt/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Studie</title>
-      <link>https://example.org/categories/studie/</link>
+      <link>http://localhost:1313/categories/studie/</link>
       <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>https://example.org/categories/studie/</guid>
+      <guid>http://localhost:1313/categories/studie/</guid>
       <description></description>
       
     </item>

@@ -283,3 +283,14 @@
     color: #f3f4f6;
   }
 }
+
+/* Fix for oversized logos on deployed version */
+.logo svg {
+  max-height: 5rem !important;
+  max-width: 5rem !important;
+}
+
+span.logo svg {
+  height: 2.5rem !important;
+  width: 2.5rem !important;
+}
