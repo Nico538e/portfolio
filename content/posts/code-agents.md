@@ -71,7 +71,7 @@ Agenten kan implementere, men kan ikke altid bestemme design-valg. Spørgsmål s
 ### 3. Review er vigtig
 Jeg kan ikke bare blindt acceptere al kode. Jeg skal:
 - Review hvad agenten lavede
-- Teste gründigt
+- Teste grundigt
 - Sikre mig at det passer til min vision
 
 Men selv med review går det meget hurtigere end at skrive alt selv.
@@ -88,7 +88,7 @@ Og den justerer. Det er meget hurtigere end at rette selv.
 1. **Skriv gode instrukser**: Min `.github/copilot-instructions.md` har været game-changer
 2. **Brug den til søgning**: Agenten kan søge i hele projektet for at finde relevante eksempler
 3. **Lav små opgaver**: "Refaktor denne funktion" virker bedre end "Refaktor hele systemet"
-4. **Dokumenter dine mønstre**: Jo mere jeg dokumenterer mine konventioner, jo bedre output
+4. **Documento dine mønstre**: Jo mere jeg dokumenterer mine konventioner, jo bedre output
 5. **Brug til strukturering**: Den er fantastisk til at organisere tanker til kode
 
 ## Udfordringer jeg har mødt
