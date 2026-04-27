@@ -2,21 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Webudvikling on Home</title>
-    <link>http://localhost:1313/tags/webudvikling/</link>
+    <link>https://example.org/tags/webudvikling/</link>
     <description>Recent content in Webudvikling on Home</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</managingEditor>
     <webMaster>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</webMaster>
     <copyright>© 2026 Nicolai Jahncke Strand</copyright>
-    <lastBuildDate>Tue, 14 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/webudvikling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://example.org/tags/webudvikling/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mit forsøg på LLM API-opgaven med rubric og AI-vurdering</title>
+      <link>https://example.org/posts/llm-api-opgave/</link>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 +0000</pubDate>
+      <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
+      <guid>https://example.org/posts/llm-api-opgave/</guid>
+      <description>Jeg byggede et forsøg på opgaven om at lave en AI-drevet vurderingsapp, hvor en rubric og et LLM-API bruges til at give en vejledende evaluering af en opgave.</description>
+      
+    </item>
     
     <item>
       <title>Mit første projekt: Portfolio i Hugo</title>
-      <link>http://localhost:1313/posts/post1/</link>
+      <link>https://example.org/posts/post1/</link>
       <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
       <author>Nicolai-strand@hotmail.com (Nicolai Jahncke Strand)</author>
-      <guid>http://localhost:1313/posts/post1/</guid>
+      <guid>https://example.org/posts/post1/</guid>
       <description>Jeg har bygget mit eget portfolio site med Hugo og lært en masse undervejs.</description>
       
     </item>
