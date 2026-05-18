@@ -1,0 +1,56 @@
+Projektets arbejdstitel:
+
+Problem:
+Hvilket konkret problem løser vi?
+E-mail korrespondancen for at løse udfordringerne ved bookingen af stander pladser på julemarked. Ved at løse denne udfordring, så undgår Lise at sidde med alle tilmeldingerne enkeltvis, men når vi laver et program, så bliver det mere streamlined med alle detaljerne sammen.
+
+Bruger:
+Hvem er den primære bruger?
+Lise/a
+Klienterne, da de skal booke via det, men ikke ser hele backenden i den.
+
+Nuværende proces:
+Hvordan foregår det i dag?
+Vi er i gang med at finde ud af, hvorvidt vores ide er stor og god nok til at arbejde 4 med. Da det kun er en ting på papir. Vores ene opgave ser større ud, når man kigger på vores aktivitetsdiagram på billed 1. 
+
+Foreslået løsning:
+Hvad bygger vi?
+Mailsystem:
+Side med liste over stadeholdere der har bekræftet tilmelding og ønske i forhold til placering.
+En side med formular hvor at stadeholdere kan tilmelde og ønske placering.
+Database der kan gemme stadeholder information så Lise kan danne et bedre overblik.
+Final side med de godkendte klienter og deres pladser. 
+Måske Supabase som DB, (se hva den anbefaler)
+ 
+
+AI-funktion:
+Hvad bruger vi AI til?
+Vi bruger AI- agenter til at kode dette projekt.  AI-assistenter bruger vi til at assistere med designet og spørger til råds om generelle løsninger til lignede projekter, fx hvordan man håndterer nye tilmeldte, samt lave vores prompts til koden. Bed den også om at teste vores kode. 
+
+
+MVP:
+Hvad er den mindste version, vi kan demonstrere?
+En side til booking/bestilling af stand til kunderne og en admin side til Lise/a hvor hun kan holde styr på hvem der har bestilt og hvor de skal stå.
+
+Afgrænsning:
+Hvad bygger vi ikke?
+Login pages
+Betalingsside
+Sikkerhed
+
+Kundespørgsmål:
+Hvilke svar mangler vi?
+Klient-liste over stadeholdere som har været der de andre år, så man kan genbruge deres kontakter.
+Plantegning over stedet hvor standerne skal være. 
+Hvor mange stande er der plads til og hvilke placeringer er bedst (kun så Lise/a kan se det)? 
+
+
+Antagelser:
+Hvad antager vi indtil videre?
+Din mor er 6-7
+Nogle af tingene bliver mere forenklet, hvis Lise/A skal kunne give opgaven videre uden for meget forklaring.
+
+Næste tre opgaver:
+Får manglende info fra lise/a
+Opret projekt 
+Lav projekt færdigt
